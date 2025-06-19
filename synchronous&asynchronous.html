@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synchronous and Asynchronous Javascript Program </title>
+</head>
+<body>
+  
+
+
+
+ <script>
+  // Synchronous Javascript Program 
+
+
+ let a=10;
+ let b=20;
+ let sum=a+b;
+ console.log(sum) //30    Run one line at a time .Line by Line compilation
+
+ //Asynchronous Javascript Program
+  console.log("Hi")
+  setTimeout(()=>
+{
+    console.log("This code will take some time for execution");
+    
+},5000);
+console.log("Hello")  // Hi
+                      // Hello
+                      // This code will take some time for execution
+
+ //Here the setTimeout function will take some time for execution but it is not affeting or blocking any other code   .It is running in background and all other code is running as usual line by line               
+ </script> 
+</body>
+</html>

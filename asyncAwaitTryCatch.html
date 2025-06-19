@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await Try Catch</title>
+  </head>
+
+  <body>
+    <script>
+    //   fetch("https://poetrydb.org/author")
+    //     .then((response) => {
+    //       return response.json();
+    //     })
+    //     .then((data) => {
+    //       const firstAuthor = data.authors[0];
+    //       fetch(`https://poetrydb.org/author/${firstAuthor}/title`)
+    //         .then((res) => {
+    //           return res.json();
+    //         })
+
+    //         .then((poemsData) => {
+    //           console.log(poemsData); // list of poems by first author
+    //         });
+    //     })
+    //     .catch((error) => {
+    //       console.error(error);
+    //       console.error("Error occurred");
+    //     });
+
+
+
+    async function getData() { // this program will run in the background without blocking other codes
+      try{
+          const response=await fetch("https://poetrydb.org/author")
+        const authorData=await response.json()// list of authors
+        const firstAuthor=authorData.authors[0] //data of first author
+        const poemsResponse=await fetch(`https://poetrydb.org/author/${firstAuthor}/title`)
+        const poems=await poemsResponse.json() //poem details
+        console.log(poems)
+      }
+      catch(error)
+      {
+        console.error("Error Occurred");
+        
+      }
+        
+    }
+    getData()
+    </script>
+  </body>
+</html>

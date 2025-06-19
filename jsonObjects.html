@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Objects</title>
+</head>
+<body>
+  
+    
+
+
+
+    <script>
+        const student={
+            name:"Ajay",
+            age:28,
+            employed:true,
+            subjectStudied:["Maths","Science","Hindi","English"]
+        };
+        const jsonObject=JSON.stringify(student)// to convert js  object to Json object
+        console.log(jsonObject);
+
+
+        // to convert Json object to js object
+       const jsObject= JSON.parse(jsonObject)
+       console.log(jsObject);
+       
+       
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Functions</title>
+</head>
+<body>
+
+    
+
+    <script>
+        const sentence = "The quick brown fox jumps over the lazy dog."
+        console.log(sentence.length);
+        console.log(sentence.charAt(14)); //15 th character
+     console.log(sentence.toLowerCase());
+      console.log(sentence.toUpperCase());
+
+      const word="She walked into the room with a beautiful smile, wearing a beautiful dress, under the beautiful light of a beautiful morning."
+    //   const newWord=word.replace("beautiful","attractive") first matching word is only changing
+
+      const newWord=word.replaceAll("beautiful","attractive") 
+      console.log(newWord); // all matching word is changing
+
+
+
+      const password="  password@123"
+      const trimmedPassword=password.trim() //remove space before and after from a string
+      console.log(password.length);
+      console.log(trimmedPassword.length);
+
+
+      const firstName="Alice"
+      const secondName="Smith"
+
+      fullName=firstName.concat(" ",secondName)
+      console.log(fullName);
+
+
+      const names="Alice,Bob,Cathy"
+      const namesArray=names.split(",")
+      console.log(namesArray);
+
+
+      const string="House of the Dragon"
+    //   const substring=string.slice(0,5)
+    //   console.log(substring);
+      const substring=string.slice(-6)
+      console.log(substring);
+
+      const substring1=string.substring(0,5)
+      console.log(substring1);  // only +ve indices
+
+      const substring2=string.substr(0,10) //numer of characters
+      console.log(substring2);
+      
+      
+      
+      
+      
+      
+      
+      
+     
+        
+        
+    </script>
+</body>
+</html>

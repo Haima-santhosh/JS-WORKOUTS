@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+
+    
+ <script>
+// 1.Function Declaration
+
+function addTwoNumbers(num1,num2)
+{
+    const sum =num1+num2;
+    return sum;
+}
+console.log(addTwoNumbers(5,8));
+
+// 2.Function Expression
+
+const add = function(num1,num2)
+{
+const sum=num1+num2;
+return sum
+}
+console.log(add(2,3));
+
+//3.Arrow Function
+// const sum =(num1,num2)=>
+// {
+// const add=num1+num2;
+// return add;
+// }
+// console.log(sum(4,4));
+
+const sum=(num1,num2)=>num1+num2;
+console.log(sum(4,4));
+
+
+
+
+
+
+// Examples of Arrow function
+
+const arrowFunction=()=>console.log("This is an arrow Function");
+arrowFunction();
+
+
+const numAdd=num=>num+10;
+const result=numAdd(40);
+console.log(result);
+
+
+
+
+
+ </script>   
+</body>
+</html>
+

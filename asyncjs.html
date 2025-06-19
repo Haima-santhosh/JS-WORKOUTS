@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JS</title>
+</head>
+<body>
+ 
+    
+
+
+
+
+
+
+    <script>
+        //.callback function
+
+        const mainFunction=(data,callback)=>{
+            console.log("This is "+ data)
+            callback();
+        }
+        const displayFunction=()=>{
+            console.log("This is a Callback function");
+            
+        }
+        mainFunction("Haima",displayFunction)
+
+
+        //2.callback hell or pyramid of doom
+
+        const jsFunction=()=>{
+            console.log("Stage 1")
+          setTimeout(()=>{
+            console.log("Stage 2");
+
+             setTimeout(()=>{
+            console.log("Stage 3");
+
+             setTimeout(()=>{
+            console.log("Stage 4");
+            
+          },1000)
+            
+          },1000)
+            
+          },1000)
+            
+        }
+        console.log("Starting");
+        
+        jsFunction()
+        console.log("Ending");
+
+
+        // 3.promise
+
+        // const promise=()=>{
+        //     return new Promise((resolve,reject)=>
+        // {
+        //     setTimeout(()=>{
+        //         console.log("First Promise");
+                
+        //     resolve("First Promise")
+        //     },1000)
+        // })
+        // }
+        // const promiseTwo=(value)=>{
+        //     return new Promise((resolve,reject)=>
+        // {
+        //     setTimeout(()=>{
+        //         console.log(value,"Second Promise");
+                
+        //     resolve("Second Promise")
+        //     },1000)
+        // })
+        // }
+        // promise().then(promiseTwo).then((response)=>{
+        //     console.log("Response : ",response);
+            
+        // })
+
+
+    //     const promise=()=>{
+    //         return new Promise((resolve,reject)=>
+    //     {
+    //         setTimeout(()=>{
+    //             console.log("First Promise");
+                
+    //         reject("Reject First Promise")
+    //         },1000)
+    //     })
+    //     }
+    //     const promiseTwo=(value)=>{
+    //         return new Promise((resolve,reject)=>
+    //     {
+    //         setTimeout(()=>{
+    //             console.log(value,"Second Promise");
+                
+    //         resolve("Second Promise")
+    //         },1000)
+    //     })
+    //     }
+    //     promise().then(promiseTwo).then((response)=>{
+    //         console.log("Response : ",response);
+            
+    //     })
+    //     .catch((error)=>
+    // {
+    //     console.log(error);
+        
+    // })
+
+     const promise=()=>{
+            return new Promise((resolve,reject)=>
+        {
+            setTimeout(()=>{
+                console.log("First Promise");
+                
+            resolve("First Promise")
+            },1000)
+        })
+        }
+        const promiseTwo=(value)=>{
+            return new Promise((resolve,reject)=>
+        {
+            setTimeout(()=>{
+                console.log(value,"Second Promise");
+                
+            reject(" Reject Second Promise")
+            },1000)
+        })
+        }
+        promise().then(promiseTwo).then((response)=>{
+            console.log("Response : ",response);
+            
+        })
+        .catch((error)=>
+    {
+        console.log(error);
+        
+    })
+
+
+    // 4. async await
+
+    const functionOne=async()=>{
+        const data=await fetch('https://fakestoreapi.com/products/1')
+        const result=await data.json()
+        console.log(result.id);
+        return result.id
+        
+    }
+    const functionTwo=async(value)=>{
+        const data=await fetch(`https://fakestoreapi.com/products/${value}`)
+        const result=await data.json()
+        console.log(result);
+      return { result, message: "Second Function Data" };
+        
+    }
+
+     const functionThree=async()=>{
+        const data=await functionOne()
+        const result=await functionTwo(data)
+        console.log(result);
+      
+        
+    }
+    functionThree()
+        
+        
+    </script>
+</body>
+</html>

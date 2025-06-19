@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission and Validatio</title>
+</head>
+<body>
+ 
+    <form id="signupForm">
+ <label for="firstName">First Name</label>
+ <input type="text" id="firstName">
+ <label for="lastName">Last Name</label>
+ <input type="text" id="lastName">
+ <label for="email">Email :</label>
+ <input type="email" id="email">
+ <label for="password">Password</label>
+ <input type="text" id="password">
+ 
+ <input type="submit" value="Sign Up">
+
+</form>
+
+
+
+
+
+
+
+
+
+    <script>
+  const signupForm=document.getElementById('signupForm')
+  signupForm.addEventListener('submit',(event)=>
+{
+
+    event.preventDefault();
+   const firstName=signupForm['firstName'].value;
+   const lastName=signupForm['lastName'].value;
+   const email=signupForm['email'].value;
+   const password=signupForm['password'].value
+
+
+//     if(firstName==="")
+//    {
+//     console.log("First Name can not  Empty");
+    
+//    }
+// })
+
+
+
+   if(firstName.trim()==="")
+   {
+    console.log("First Name is Empty");
+    
+   }
+    if(firstName.length>20)
+   {
+    console.log("First Name can  not  have more than 20 characters");
+    
+   }
+    
+   if(lastName.trim()==="")
+   {
+    console.log("Last Name is  Empty");
+    
+   }
+    if(lastName.length>20)
+   {
+    console.log("Last Name can  not  have more than 20 characters");
+    
+   }
+
+
+
+
+   const emailRegex=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+   if(!email.match(emailRegex))
+   {
+    console.log("Email is not in correct format");
+    
+   }
+   const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{6,}$/;
+   if(!password.match(passwordRegex))
+   {
+    console.log("Password must be at least 6 characters long, include one uppercase letter, one number, and one special character.");
+    
+   }
+
+})
+
+
+
+  
+  
+    </script>
+</body>
+</html>

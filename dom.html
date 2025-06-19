@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1 class="test">Hello World!</h1>
+    <h1 id="test1">Hello World!</h1>
+
+    <h2>Heading1</h2>
+    <h2>Heading2</h2>
+    <button id="myButton">Click</button>
+
+
+
+    <h3 class="heading">Heading1</h3>
+    <h3 class="heading">Heading2</h3>
+    
+
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ul>
+
+    <form action="">
+        <input type="radio" name="gender" value="Male">
+        <input type="radio" name="gender" value="Female">
+        <input type="radio" name="gender" value="Other">
+    </form>
+
+
+
+
+
+
+
+ <script>
+ //1.querySelector -access only one element at a time   
+const myH1=document.querySelector('h1');
+console.log(myH1)
+const myHeading=document.querySelector('.test');
+console.log(myHeading)
+
+const myHead=document.querySelector('#test1');
+console.log(myHead)
+
+
+//2.querySelectAll-access multiple element at a time
+const element =document.querySelectorAll('h2')
+console.log(element)
+
+
+//3.getElementById
+const btn=document.getElementById('myButton')
+console.log(btn)
+
+//4.getElementsByClassName
+const elements=document.getElementsByClassName('heading')
+console.log(elements)
+
+//5.getElementsByTagName
+
+const response=document.getElementsByTagName('li')
+console.log(response)
+
+//6.getElementsByName -using mainly in forms
+const myRadio=document.getElementsByName('gender')
+console.log(myRadio)
+
+
+
+
+
+
+
+
+
+
+ </script>   
+    
+</body>
+</html>

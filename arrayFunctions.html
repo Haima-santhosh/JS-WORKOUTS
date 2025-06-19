@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Functions</title>
+</head>
+<body>
+ 
+    
+
+
+
+
+    <script>
+       const products=[
+    {
+        title:"Black Kurti",
+        price:1999
+    },
+    {
+        title:"Ckeckered Shirt",
+        price:999
+    },
+    {
+        title:"Red Jacket",
+        price:3999
+    },
+  ]   
+  products.push({title:"Green Saree",price:1599})
+  console.log(products); // add element to last of array
+
+  products.pop()
+  console.log(products);  //  delete  last element of array
+
+   products.unshift({ttle:"Pink Skirt",price:1299})
+   console.log(products); // add an element to first of array
+
+   products.shift()
+   console.log(products); // delete first element of an array
+
+
+
+   //1.SLICE
+   
+   const people = [
+  { name: "Alice Johnson", age: 25, email: "alice.johnson@example.com" },
+  { name: "Bob Smith", age: 30, email: "bob.smith@example.com" },
+  { name: "Charlie Brown", age: 22, email: "charlie.brown@example.com" },
+  { name: "Diana Prince", age: 28, email: "diana.prince@example.com" },
+  { name: "Ethan Clark", age: 35, email: "ethan.clark@example.com" },
+  { name: "Fiona Davis", age: 27, email: "fiona.davis@example.com" },
+  { name: "George Miller", age: 31, email: "george.miller@example.com" },
+  { name: "Hannah Scott", age: 24, email: "hannah.scott@example.com" },
+  { name: "Ian Wright", age: 29, email: "ian.wright@example.com" },
+  { name: "Julia Roberts", age: 26, email: "julia.roberts@example.com" }
+];
+
+
+// const firstFivePeople=people.slice(0,5)
+// console.log(firstFivePeople);
+// const firstFivePeople=people.slice(3,6)
+// console.log(firstFivePeople);
+
+const firstFivePeople=people.slice(-5)
+console.log(firstFivePeople); //last 5 people
+
+//2.SPLICE
+
+const animals=["cat","dog","cow","fox"]
+animals.splice(0,3,"goat","elephant") // index to insert, delete count starting from index , elements 
+console.log(animals);
+
+
+
+
+
+    
+    </script>
+</body>
+</html>

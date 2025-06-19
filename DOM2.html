@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+ <h1 id="title">Hi, there</h1>
+ <p class="para">This is first paragraph </p>
+ <p class="para text">This is second paragraph</p>
+ <p class="para">This is third paragraph </p>
+ <p class="para text">This is fourth paragraph </p>
+ 
+ <a href="">Link1</a>
+ <a href="">Link2</a>
+ <a href="">Link3</a>
+ <a href="">Link4</a>
+ <a href="">Link5</a>
+ <br>
+ <input type="text" name="email" value="asd@gmail.com"><br>
+ <p id="emailError"></p>
+ <input type="text" name="username"><br>
+ <input type="text" name="password">
+    
+
+
+
+
+
+
+
+
+
+
+<script>
+//1.getElementById
+const variable=document.getElementById('title');
+    console.log(variable);
+
+
+    const variable1=document.getElementById('title').innerHTML; //only content
+    console.log(variable1);
+
+    title.innerHTML="Hello"
+    title.style.color="red";
+
+ // 2.getElementByClassName
+
+ const variable3=document.getElementsByClassName('para')
+ console.log(variable3)
+ console.log(variable3.length)//4
+ console.log(variable3[0])//<p class="para">This is first paragraph </p>
+
+ variable3[3].style.backgroundColor="green"
+
+
+ const variable4=document.getElementsByClassName('para text')
+ console.log(variable4)
+ console.log(variable4.length);
+ 
+ variable4[0].style.color="blue"
+
+ //getElementByTagName
+
+
+ const tag=document.getElementsByTagName('a')
+ console.log(tag)
+ console.log(tag[2])
+  console.log(tag[1].innerHTML)
+  tag[4].style.color="yellow"
+  tag[4].style.backgroundColor="black"
+   tag[4].innerHTML+= "new Link added" //tag[4].innerHTML= tag[4].innerHTML + "new Link added"
+
+   for(let i=0;i<tag.length;i++)
+   {
+    tag[i].innerHTML+= " something"
+    //  tag[i].innerHTML+= i
+    //  tag[i].innerHTML+= ` ${i}`
+     tag[i].style.color="blue"
+   }
+
+
+   //4.getElementsByName
+
+   const name=document.getElementsByName('email')
+   console.log(name)//NodeList [input]0: inputlength: 1[[Prototype]]: NodeList
+console.log(name[0]);//<input type="text" name="email" value="asd@gmail.com">
+console.log(name[0].value) //asd@gmail.com
+name[0].value="sample@gmail.com"
+if(name[0].value==='sample@gmail.com')
+{
+    const emailError=document.getElementById('emailError')
+    
+        emailError.innerHTML="success!!!!"
+        emailError.style.color="green"
+         name[0].style.borderColor="green"
+    
+}
+else{
+
+    emailError.innerHTML="Error!!!!"
+        emailError.style.color="red"
+        name[0].style.borderColor="red"
+
+}
+
+//5.querySelector -select first rendered element only
+
+const query=document.querySelector('#title')
+query.innerHTML+=" How are you?"
+console.log(query.innerHTML)
+const query1=document.querySelector('.para')
+console.log(query1.innerHTML); // select first value with the para class name
+
+const query2=document.querySelector('.para.text')
+console.log(query2.innerHTML)
+query2.innerHTML="second paragraph with class name as text"
+console.log(query2.innerHTML);
+const query3=document.querySelector('a')
+console.log(query3.innerHTML)
+query3.innerHTML+=" queryTag"
+console.log(query3.innerHTML)
+
+
+//6.querySelectorAll
+
+// array of tags
+const queryrAll=document.querySelectorAll('input')
+console.log(queryrAll)
+console.log(queryrAll[0].value)
+
+// array of class
+const queryrAll2=document.querySelectorAll('.text')
+console.log(queryrAll2);
+
+console.log(queryrAll2[0].innerHTML);
+
+
+// array of ids
+queryrAll3=document.querySelectorAll('#title')
+console.log(queryrAll3)
+console.log(queryrAll3[0].innerHTML)
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>   
+</body>
+</html>

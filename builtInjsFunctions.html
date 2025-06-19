@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built In Functions in Javascript</title>
+</head>
+<body>
+ 
+    
+
+
+
+
+    <script>
+        // REST Operator
+
+        // function findAverage(num1,num2)
+        // {
+        //     average=(num1+num2)/2
+        //     console.log(average);
+            
+        // }
+        // findAverage(4,8)
+
+          function findAverage(...numbers)
+        {
+          
+            console.log(numbers);
+            let sum=0
+            for(let i=0;i<numbers.length;i++)
+        {
+            sum=sum+numbers[i];
+        }
+         const average=sum/numbers.length
+         console.log(average);
+         
+            
+        }
+        findAverage(4,8,3,10,2,34)
+
+
+        //2.spread operator
+        
+        let name="Haima"
+        let nameCopy=name
+        nameCopy="Santhosh"
+        console.log(name);
+        console.log(nameCopy);
+
+
+        // let person={name:"Haima", age:30}
+        // let personCopy=person
+        // personCopy.name="Santhosh"
+        // console.log(person); // santhosh
+        // console.log(personCopy);// santhosh both names changed
+
+        
+        let person={name:"Haima", age:30}
+        let personCopy={...person}
+        personCopy.name="Santhosh"
+        console.log(person); // santhosh
+        console.log(personCopy);// santhosh both names changed
+
+
+
+        // 3.MAP FUNCTION
+
+
+
+        const numbers=[1,2,3,4,5]
+        const squares=numbers.map(number=>number*number) // act as loop
+        console.log(squares);
+
+
+        const names=['ajay','alice','smith','samantha']
+        const newName=names.map(name=>name.toUpperCase())
+        console.log(newName);
+
+
+
+        //4.FILTER FUNCTION
+
+        const clothingProducts = [
+  { id: 1, name: "Classic Denim Jacket", price: 59.99, category: "men" },
+  { id: 2, name: "Floral Maxi Dress", price: 79.99, category: "women" },
+  { id: 3, name: "Slim Fit T-Shirt", price: 19.99, category: "men" },
+  { id: 4, name: "High-Waist Jeans", price: 49.99, category: "women" },
+  { id: 5, name: "Cotton Hoodie", price: 39.99, category: "men" },
+  { id: 6, name: "Knit Sweater", price: 44.99, category: "women" },
+  { id: 7, name: "Chino Pants", price: 35.99, category: "men" },
+  { id: 8, name: "Ruffle Blouse", price: 32.99, category: "women" },
+  { id: 9, name: "Bomber Jacket", price: 69.99, category: "men" },
+  { id: 10, name: "Pleated Skirt", price: 29.99, category: "women" }
+];
+
+const mensWear=clothingProducts.filter((clothing)=>{
+    if(clothing.category==="men")
+{
+   return clothing;
+}
+})
+ console.log(mensWear);
+
+ const priceLessThan40=clothingProducts.filter((clothing)=>
+{
+    if(clothing.price<40)
+{
+    return clothing
+}
+})
+console.log(priceLessThan40);
+
+
+
+    //5. REDUCE FUNCTION
+
+
+    const num=[20,4,56,78,2,7]
+    const sum=num.reduce((total,currentNumer)=>total+currentNumer,0)
+    console.log(sum);
+
+
+
+    //6.FOREACH only iterate over elements
+
+
+    const nums=[19,80,67,56,45]
+
+    nums.forEach((currentValue,index)=>
+{
+    console.log(currentValue, index);
+    
+})
+    
+
+
+
+
+    
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Functions</title>
+</head>
+<body>
+
+
+
+
+ <script>
+
+
+
+
+
+// Biriyani Ordered Successfully
+// Parcelling Your Ordered
+// Total : 145Rs
+
+
+// Noodles Ordered Successfully
+// Serving Your Order at Table 
+// Total :120Rs
+
+
+
+function takeParcel(price)  // function is using as an argument
+{
+    console.log("Parcelling Your Order");
+    const totalPrice=price+5;
+    console.log("Total :"+totalPrice+"Rs");
+}
+
+function dineIn(price) // function is using as an argument
+{
+console.log("Serving Your Order at table");
+console.log("Total :"+price+"Rs");
+
+
+}
+
+function orderFoodItem(item,price,orderType) // Main function
+{
+    console.log((item+" ordered successfully"));
+    orderType(price)// callback function
+    
+}
+orderFoodItem("Noodles",140,takeParcel)
+orderFoodItem("Masala Dosa",120,dineIn)
+
+
+ </script>   
+</body>
+</html>
